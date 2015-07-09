@@ -1,0 +1,43 @@
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     >
+
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        >
+        <TextView 
+            android:text="账户："
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <EditText 
+            android:id="@+id/count_id"
+            android:hint="账户号码"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        >
+        <TextView 
+            android:text="密码："
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <EditText 
+            android:hint="密码"
+            android:id="@+id/count_password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+    
+</LinearLayout>
