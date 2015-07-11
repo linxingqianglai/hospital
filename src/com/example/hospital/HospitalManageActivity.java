@@ -16,6 +16,7 @@ public class HospitalManageActivity extends ActionBarActivity {
 	TextView back = null;
 	Button bn_information = null;
 	Button bn_log = null;
+	Button bn_bed = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -23,6 +24,7 @@ public class HospitalManageActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_hospital_manage);
 		bn_information = (Button)findViewById(R.id.information);
 		bn_log = (Button)findViewById(R.id.log);
+		bn_bed = (Button)findViewById(R.id.bedinformation);
 		title = (TextView)findViewById(R.id.tv_top_title);
 		back = (TextView)findViewById(R.id.btn_title_back);
 		title.setText("住院管理");
@@ -50,6 +52,15 @@ public class HospitalManageActivity extends ActionBarActivity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(HospitalManageActivity.this,LogCostActivity.class);
+				startActivity(intent);
+			}
+		});
+		bn_bed.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent=new Intent(HospitalManageActivity.this,BedActivity.class);
 				startActivity(intent);
 			}
 		});

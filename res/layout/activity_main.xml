@@ -19,10 +19,12 @@
             android:layout_height="wrap_content"
             />
         <EditText 
-            android:id="@+id/count_id"
+            android:id="@+id/account_id"
             android:hint="账户号码"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="@null"
+            android:numeric="integer"
             />
     </LinearLayout>
     <LinearLayout 
@@ -37,9 +39,10 @@
             />
         <EditText 
             android:hint="密码"
-            android:id="@+id/count_password"
+            android:id="@+id/account_password"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="@null"
             />
     </LinearLayout>
     <LinearLayout 

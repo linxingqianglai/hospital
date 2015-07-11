@@ -1108,6 +1108,8 @@ containing a value of this type.
         public static final int Price=0x7f050061;
         public static final int Sex=0x7f050043;
         public static final int StartDate=0x7f050046;
+        public static final int account_id=0x7f050064;
+        public static final int account_password=0x7f050065;
         public static final int action_bar=0x7f05001c;
         public static final int action_bar_activity_content=0x7f050015;
         public static final int action_bar_container=0x7f05001b;
@@ -1134,8 +1136,6 @@ containing a value of this type.
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int cost=0x7f050057;
-        public static final int count_id=0x7f050064;
-        public static final int count_password=0x7f050065;
         public static final int create_medium=0x7f050051;
         public static final int default_activity_button=0x7f050028;
         public static final int detail=0x7f05005d;

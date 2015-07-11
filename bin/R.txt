@@ -261,6 +261,8 @@ int id PaidAmount 0x7f050048
 int id Price 0x7f050061
 int id Sex 0x7f050043
 int id StartDate 0x7f050046
+int id account_id 0x7f050064
+int id account_password 0x7f050065
 int id action_bar 0x7f05001c
 int id action_bar_activity_content 0x7f050015
 int id action_bar_container 0x7f05001b
@@ -287,8 +289,6 @@ int id change_password 0x7f050069
 int id checkbox 0x7f05002d
 int id collapseActionView 0x7f05000d
 int id cost 0x7f050057
-int id count_id 0x7f050064
-int id count_password 0x7f050065
 int id create_medium 0x7f050051
 int id default_activity_button 0x7f050028
 int id detail 0x7f05005d

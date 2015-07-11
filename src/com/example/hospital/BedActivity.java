@@ -7,20 +7,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class BedActivity extends ActionBarActivity {
 	TextView title =null;
 	TextView back = null;
+	Spinner spinner = null;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_bed);
+		spinner = (Spinner)findViewById(R.id.bed_id);
 		title = (TextView)findViewById(R.id.tv_top_title);
 		back = (TextView)findViewById(R.id.btn_title_back);
 		title.setText("¥≤Œª–≈œ¢");
 		back.setVisibility(View.VISIBLE);
+
+		String[] items=getResources().getStringArray(R.array.spinner_bed_ids);
+		ArrayAdapter<String> adapter=new ArrayAdapter<String>(BedActivity.this,android.R.layout.simple_spinner_item,items);
+		spinner.setAdapter(adapter);
 		back.setOnClickListener(new OnClickListener() {
 			
 			@Override
