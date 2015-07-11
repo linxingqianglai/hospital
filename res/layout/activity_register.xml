@@ -1,0 +1,10 @@
+<LinearLayout
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <include 
+        layout="@layout/title_bar"
+        />
+</LinearLayout>

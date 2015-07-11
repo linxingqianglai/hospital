@@ -11,7 +11,33 @@
         <item>医生</item>
         <item>管理员</item>
     </string-array>
+    <string-array name="spinner_bed_ids">
+        <item>1000000001</item>
+        <item>1000000002</item>
+        <item>1000000003</item>
+        <item>1000000004</item>
+        <item>2000000001</item>
+        <item>2000000002</item>
+        <item>2000000003</item>
+        <item>2000000004</item>
+        <item>3000000001</item>
+        <item>3000000002</item>
+    </string-array>
 
     <string name="title_activity_patient">PatientActivity</string>
+    <string name="title_activity_doctor">DoctorActivity</string>
+    <string name="title_activity_pation_inf">PationInfActivity</string>
+    <string name="title_activity_manager">ManagerActivity</string>
+    <string name="title_activity_hospitalization">HospitalizationActivity</string>
+    <string name="title_activity_leave_hos">LeaveHosActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_create_medium">CreateMediumActivity</string>
+    <string name="title_activity_hospital_manage">HospitalManageActivity</string>
+    <string name="title_activity_leave_manage">LeaveManageActivity</string>
+    <string name="title_activity_protect">ProtectActivity</string>
+    <string name="title_activity_person">PersonActivity</string>
+    <string name="title_activity_log_cost">LogCostActivity</string>
+    <string name="title_activity_cost">CostActivity</string>
+    <string name="title_activity_bed">BedActivity</string>
 
 </resources>

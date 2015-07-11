@@ -1,0 +1,33 @@
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include
+        layout="@layout/title_bar"
+         />
+    <Button 
+        android:id="@+id/record_medium"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="病历查询"
+        />
+    <Button 
+        android:id="@+id/money"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="费用查询"
+        />
+    <Button 
+        android:id="@+id/doctor"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="医嘱查询"
+        />
+    <Button 
+        android:id="@+id/others"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="各项检查查询"
+        />
+</LinearLayout>

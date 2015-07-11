@@ -1,8 +1,8 @@
 package com.example.hospital;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 	Spinner  spinner=null;
 	TextView title=null;
 	Button bn_login = null;
@@ -57,6 +57,16 @@ public class MainActivity extends ActionBarActivity {
 				if(position==0)
 				{
 					Intent intent = new Intent(MainActivity.this,PatientActivity.class);
+					startActivity(intent);
+				}
+				if(position==2)
+				{
+					Intent intent = new Intent(MainActivity.this,DoctorActivity.class);
+					startActivity(intent);
+				}
+				if(position==3)
+				{
+					Intent intent = new Intent(MainActivity.this,ManagerActivity.class);
 					startActivity(intent);
 				}
 				

@@ -28,7 +28,7 @@
 	    />
 	<Button
 	    android:id="@+id/appointment"
-	    android:text="预约治疗"
+	    android:text="挂号"
 	    android:layout_height="wrap_content"
 	    android:layout_width="fill_parent"
 	    ></Button>

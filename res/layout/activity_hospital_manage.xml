@@ -1,0 +1,34 @@
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"	
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	>
+    <include 
+        layout="@layout/title_bar"
+        />
+    <Button 
+        android:id="@+id/information"
+        android:text="个人资料登记"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        />
+    <Button 
+        android:id="@+id/bedinformation"
+        android:text="床位信息"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        />
+    <Button 
+        android:id="@+id/log"
+        android:text="病人日费用记账"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        />
+    <Button 
+        android:id="@+id/cost"
+        android:text="住院部资金报表"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        />
+</LinearLayout>

@@ -1,0 +1,28 @@
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"	
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	>
+    <include 
+        layout="@layout/title_bar"
+        />
+    <Button 
+        android:id="@+id/hospital"
+        android:text="病历归档"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        />
+    <Button 
+        android:id="@+id/cost"
+        android:text="出院结算"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        />
+    <Button 
+        android:id="@+id/detail"
+        android:text="各项费用明细表"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        />
+</LinearLayout>

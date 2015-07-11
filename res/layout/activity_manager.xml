@@ -1,0 +1,29 @@
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	>
+	<include
+	    layout="@layout/title_bar"
+	    />
+    <Button 
+        android:id="@+id/hospital"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="住院管理"
+        />
+    <Button 
+        android:id="@+id/leave"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="出院管理"
+        />
+    <Button 
+        android:id="@+id/protect"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="系统维护"
+        />
+    
+</LinearLayout>

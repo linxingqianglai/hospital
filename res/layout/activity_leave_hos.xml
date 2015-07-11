@@ -1,0 +1,33 @@
+<LinearLayout
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+    <include 
+        layout="@layout/title_bar"
+        />
+    <CheckBox 
+        android:id="@+id/hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="是否住院"
+        />
+    <CheckBox 
+        android:id="@+id/doctor"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="医生证明"
+        />
+    <CheckBox
+        android:id="@+id/cost"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="是否交费"
+        />
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="确认"
+        />
+</LinearLayout>

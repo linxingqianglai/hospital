@@ -1,0 +1,36 @@
+<LinearLayout
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+     xmlns:android="http://schemas.android.com/apk/res/android">
+    <include 
+        android:id="@+id/title"
+        layout="@layout/title_bar"/>
+    
+    <Button 
+        android:id="@+id/record_medium"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="病历处理"
+        />
+    <Button 
+        android:id="@+id/create_medium"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="病历建立"
+        />
+    
+    <Button 
+        android:id="@+id/search_medicalrecord"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="病历查询"
+        />
+    <Button 
+        android:id="@+id/search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="查房"
+        />
+    
+</LinearLayout>
