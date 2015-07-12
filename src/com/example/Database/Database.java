@@ -10,11 +10,12 @@ import android.util.Log;
 
 public class Database extends SQLiteOpenHelper {
 	private final static String TAG="DataseSQLiteOpenHelper";
-	private final static String 	DATEBASE_NAME = File.separator+"mnt"
-	+File.separator+"sdcard"+File.separator+"hospital"+File.separator+"mydb.db";
+	//private final static String 	DATEBASE_NAME = "mnt"
+	//+File.separator+"sdcard"+File.separator+"hospital"+File.separator+"mydb.db";
+	public final static String DATEBASE_NAME="hospital"+File.separator+"mydb.db";
 	private final static int     DATEBASE_VERSION = 1;
-	public Database(Context context) {
-		super(context, DATEBASE_NAME, null, DATEBASE_VERSION);
+	public Database(Context context,String path) {
+		super(context, path+File.separator+DATEBASE_NAME, null, DATEBASE_VERSION);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -23,8 +24,9 @@ public class Database extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method SQLiteDatabase dbstub
 		db.execSQL(SQLiteConstants.CREATE_TABLE_LOGIN);
+		db.execSQL(SQLiteConstants.CREATE_TABLE_PATIENT);
 		insert(db);
-		Log.w(TAG,"mydb is onCreate");
+		Log.e(TAG,"mydb is onCreate");
 	}
 
 	@Override
@@ -36,12 +38,28 @@ public class Database extends SQLiteOpenHelper {
 	{
 		ContentValues values1 = new ContentValues();
 		ContentValues values2 = new ContentValues();
+		ContentValues values3 = new ContentValues();
+		ContentValues values_patient1 = new ContentValues();
+		ContentValues values_patient2 = new ContentValues();
+		ContentValues values_patient3 = new ContentValues();
 		values1.put(SQLiteConstants.account, "2012301200207");
 		values1.put(SQLiteConstants.password, "2012301200207");
 		values2.put(SQLiteConstants.account, "2013310200226");
 		values2.put(SQLiteConstants.password, "2013310200226");
+		values3.put(SQLiteConstants.account, "2013310200126");
+		values3.put(SQLiteConstants.password, "2013310200126");
+		values_patient1.put(Patient.account,"2012301200207");
+		values_patient2.put(Patient.account, "2013310200126");
+		values_patient3.put(Patient.account, "2013310200226");
+		
 		db.insert(SQLiteConstants.table_login, null, values1);
 		db.insert(SQLiteConstants.table_login, null, values2);
+		db.insert(SQLiteConstants.table_login, null, values3);
+		db.insert(SQLiteConstants.table_patient, null, values_patient1);
+		db.insert(SQLiteConstants.table_patient, null, values_patient2);
+		db.insert(SQLiteConstants.table_patient, null, values_patient3);
+		
+		
 	}
 
 }

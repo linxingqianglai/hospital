@@ -13,6 +13,7 @@
         android:text="是否住院"
         />
     <RadioGroup 
+        android:id="@+id/role"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         >

@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -17,6 +19,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.Database.Constants;
 import com.example.Database.Database;
 import com.example.Database.SQLiteConstants;
 
@@ -58,12 +61,13 @@ public class MainActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		Log.e("path",Environment.getExternalStorageDirectory().toString());
 		et_account = (EditText)findViewById(R.id.account_id);
 		et_password = (EditText)findViewById(R.id.account_password);
 		spinner=(Spinner)findViewById(R.id.spinner);
 		title = (TextView)findViewById(R.id.tv_top_title);
 		bn_login = (Button)findViewById(R.id.login);
-		database = new Database(MainActivity.this);
+		database = new Database(MainActivity.this,Environment.getExternalStorageDirectory().toString());
 		String[] items = getResources().getStringArray(R.array.spinner_names);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,items);
 		spinner.setAdapter(adapter);
@@ -93,6 +97,7 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				final String account=et_account.getText().toString();
 				final String password=et_password.getText().toString();
+				Constants.account=account;
 				new Thread()
 				{
 					public void run() 
