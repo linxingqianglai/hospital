@@ -7,12 +7,6 @@
         layout="@layout/title_bar"
         />
     <CheckBox 
-        android:id="@+id/hospital"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="是否住院"
-        />
-    <CheckBox 
         android:id="@+id/doctor"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -22,7 +16,7 @@
         android:id="@+id/cost"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="是否交费"
+        android:text="交费成功"
         />
     <Button
         android:id="@+id/ok"

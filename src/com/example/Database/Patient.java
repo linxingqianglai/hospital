@@ -14,7 +14,7 @@ public class Patient {
 	public static final String he_tel="he_tel";
 	public static final String doctor="doctor";
 	public static final String hospitalized="hospitalized";
-	public static final String medical_cerficate="medical_cerficate";
+	public static final String medical_cerficate="certificate";
 	public static final String contributions="contributions";
 	
 }

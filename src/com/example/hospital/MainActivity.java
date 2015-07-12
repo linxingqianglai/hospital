@@ -64,6 +64,8 @@ public class MainActivity extends Activity {
 		Log.e("path",Environment.getExternalStorageDirectory().toString());
 		et_account = (EditText)findViewById(R.id.account_id);
 		et_password = (EditText)findViewById(R.id.account_password);
+		et_account.setText("2012301200207");
+		et_password.setText("2012301200207");
 		spinner=(Spinner)findViewById(R.id.spinner);
 		title = (TextView)findViewById(R.id.tv_top_title);
 		bn_login = (Button)findViewById(R.id.login);

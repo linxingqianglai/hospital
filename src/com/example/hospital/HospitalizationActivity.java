@@ -48,6 +48,7 @@ public class HospitalizationActivity extends ActionBarActivity {
 			if(msg.what==0x123)
 			{
 				Toast.makeText(HospitalizationActivity.this, "存入数据库完成", Toast.LENGTH_LONG).show();
+				finish();
 			}
 		};
 	};
@@ -108,10 +109,11 @@ public class HospitalizationActivity extends ActionBarActivity {
 					public void run() 
 					{
 						ContentValues values = new ContentValues();
+						values.put(Patient.medical_cerficate,medical_cerficate);
 						values.put(Patient.role, role_no);
 						values.put(Patient.hospitalized,hospital);
 						values.put(Patient.contributions, cost);
-						values.put(Patient.medical_cerficate,medical_cerficate);
+						//values.put(Patient.medical_cerficate,medical_cerficate);
 						SQLiteDatabase db = database.getReadableDatabase();
 						db.update("patient", values, Patient.account+"=?", new String[]{Constants.account});
 						handler.sendEmptyMessage(0x123);

@@ -25,6 +25,7 @@ public class Database extends SQLiteOpenHelper {
 		// TODO Auto-generated method SQLiteDatabase dbstub
 		db.execSQL(SQLiteConstants.CREATE_TABLE_LOGIN);
 		db.execSQL(SQLiteConstants.CREATE_TABLE_PATIENT);
+		db.execSQL(SQLiteConstants.CREATE_TABLE_LEAVEHOSPITAL);
 		insert(db);
 		Log.e(TAG,"mydb is onCreate");
 	}

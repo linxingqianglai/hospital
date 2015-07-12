@@ -3,20 +3,22 @@ package com.example.hospital;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class PatientActivity extends ActionBarActivity {
 	TextView title = null;
 	TextView bn_back = null;
-	TextView information = null;
-	TextView tv_procedure = null;
-	TextView tv_leave = null;
-	TextView tv_appointment = null;
+	Button information = null;
+	Button tv_procedure = null;
+	Button tv_leave = null;
+	Button tv_appointment = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -24,10 +26,10 @@ public class PatientActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_patient);
 		title = (TextView)findViewById(R.id.tv_top_title);
 		bn_back = (TextView)findViewById(R.id.btn_title_back);
-		information = (TextView)findViewById(R.id.information);
-		tv_procedure = (TextView)findViewById(R.id.procedure);
-		tv_leave = (TextView)findViewById(R.id.leave_hospital);
-		tv_appointment = (TextView)findViewById(R.id.leave_hospital);
+		information = (Button)findViewById(R.id.information);
+		tv_procedure = (Button)findViewById(R.id.procedure);
+		tv_leave = (Button)findViewById(R.id.leave_hospital);
+		tv_appointment = (Button)findViewById(R.id.appointment);
 		
 		title.setText("患者管理模块");
 		bn_back.setVisibility(View.VISIBLE);
@@ -72,7 +74,9 @@ public class PatientActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
+				Log.e("tv_appointment","tv--------------------");
 				Intent intent = new Intent(PatientActivity.this,RegisterActivity.class);
+				startActivity(intent);
 			}
 		});
 	}
