@@ -1272,21 +1272,20 @@ containing a value of this type.
         public static final int activity_cost=0x7f030019;
         public static final int activity_create_medium=0x7f03001a;
         public static final int activity_doctor=0x7f03001b;
-        public static final int activity_hello=0x7f03001c;
-        public static final int activity_hospital_manage=0x7f03001d;
-        public static final int activity_hospitalization=0x7f03001e;
-        public static final int activity_leave_hos=0x7f03001f;
-        public static final int activity_leave_manage=0x7f030020;
-        public static final int activity_log_cost=0x7f030021;
-        public static final int activity_main=0x7f030022;
-        public static final int activity_manager=0x7f030023;
-        public static final int activity_patient=0x7f030024;
-        public static final int activity_pation_inf=0x7f030025;
-        public static final int activity_person=0x7f030026;
-        public static final int activity_protect=0x7f030027;
-        public static final int activity_register=0x7f030028;
-        public static final int support_simple_spinner_dropdown_item=0x7f030029;
-        public static final int title_bar=0x7f03002a;
+        public static final int activity_hospital_manage=0x7f03001c;
+        public static final int activity_hospitalization=0x7f03001d;
+        public static final int activity_leave_hos=0x7f03001e;
+        public static final int activity_leave_manage=0x7f03001f;
+        public static final int activity_log_cost=0x7f030020;
+        public static final int activity_main=0x7f030021;
+        public static final int activity_manager=0x7f030022;
+        public static final int activity_patient=0x7f030023;
+        public static final int activity_pation_inf=0x7f030024;
+        public static final int activity_person=0x7f030025;
+        public static final int activity_protect=0x7f030026;
+        public static final int activity_register=0x7f030027;
+        public static final int support_simple_spinner_dropdown_item=0x7f030028;
+        public static final int title_bar=0x7f030029;
     }
     public static final class menu {
         public static final int bed=0x7f0d0000;

@@ -24,7 +24,7 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<EditText 
+        		<Spinner
             		android:id="@+id/name"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
