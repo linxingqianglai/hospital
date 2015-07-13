@@ -36,6 +36,7 @@ public class LeaveHosActivity extends ActionBarActivity {
 			if(msg.what==0x123)
 			{
 				Toast.makeText(LeaveHosActivity.this, "添加数据成功", Toast.LENGTH_LONG).show();
+				finish();
 			}
 		};
 	};

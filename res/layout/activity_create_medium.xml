@@ -26,6 +26,12 @@
                 android:layout_height="wrap_content"
                 android:text="日期："
                 />
+            <EditText 
+                android:id="@+id/date"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+               	android:background="@null"
+                />
         </LinearLayout>
         <LinearLayout 
             android:layout_height="wrap_content"
@@ -56,6 +62,7 @@
                 android:layout_height="wrap_content"
                 />
             <RadioGroup 
+                android:id="@+id/sex"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 >
@@ -105,20 +112,28 @@
                 />
             
         </LinearLayout>
-         <TextView 
-            android:layout_width="wrap_content"
+        <LinearLayout 
             android:layout_height="wrap_content"
-            android:text="病情"
-            />
-        <EditText 
-            android:id="@+id/illness"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:hint="病情"
-            android:gravity="top"
-            android:lines="10"
+            android:orientation="horizontal"
+            >
+            <TextView 
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="病情"
             />
+       		 <EditText 
+           		 	android:id="@+id/illness"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+            		android:background="@null"
+            		android:hint="病情"
+            		android:gravity="top"
+            		android:lines="10"
+            />
+            
+        </LinearLayout>
+         
         </LinearLayout>     
         
     </ScrollView>

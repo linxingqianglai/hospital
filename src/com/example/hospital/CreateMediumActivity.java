@@ -7,16 +7,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class CreateMediumActivity extends ActionBarActivity {
 	TextView title = null;
 	TextView back = null;
+	EditText et_date = null;
+	EditText et_name = null;
+	RadioGroup rg_sex = null;
+	EditText et_age = null;
+	EditText et_doctor = null;
+	EditText et_illness = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_create_medium);
+		et_date = (EditText)findViewById(R.id.date);
+		et_name = (EditText)findViewById(R.id.name);
+		rg_sex = (RadioGroup)findViewById(R.id.sex);
+		et_age = (EditText)findViewById(R.id.age);
+		et_doctor = (EditText)findViewById(R.id.doctor);
+		et_illness = (EditText)findViewById(R.id.illness);
 		title = (TextView)findViewById(R.id.tv_top_title);
 		back = (TextView)findViewById(R.id.btn_title_back);
 		back.setVisibility(View.VISIBLE);
