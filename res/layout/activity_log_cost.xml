@@ -24,8 +24,8 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<TextView  
-            		android:id="@+id/Name"
+        		<EditText 
+            		android:id="@+id/name"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -41,7 +41,7 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<TextView 
+        		<EditText 
             		android:id="@+id/age"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
@@ -58,8 +58,8 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<TextView  
-            		android:id="@+id/Sex"
+        		<EditText 
+            		android:id="@+id/sex"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -75,8 +75,8 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<TextView  
-            		android:id="@+id/HospHouse"
+        		<EditText  
+            		android:id="@+id/hosphouse"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -92,8 +92,8 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<TextView 
-            		android:id="@+id/HospBed"
+        		<EditText 
+            		android:id="@+id/hospbed"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -109,8 +109,8 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<TextView 
-            		android:id="@+id/ChargeNumber"
+        		<EditText 
+            		android:id="@+id/chargenumber"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -126,8 +126,8 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<TextView  
-            		android:id="@+id/ChargeProject"
+        		<EditText   
+            		android:id="@+id/chargeproject"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -143,8 +143,8 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<TextView 
-            		android:id="@+id/ChargeName"
+        		<EditText 
+            		android:id="@+id/chargename"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -160,8 +160,8 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<TextView 
-            		android:id="@+id/Price"
+        		<EditText 
+            		android:id="@+id/price"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -177,8 +177,8 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<TextView 
-            		android:id="@+id/MeasureUnits"
+        		<EditText 
+            		android:id="@+id/measureunits"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -194,8 +194,8 @@
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             	/>
-        		<TextView  
-            		android:id="@+id/Allincost"
+        		<EditText 
+            		android:id="@+id/allincost"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"

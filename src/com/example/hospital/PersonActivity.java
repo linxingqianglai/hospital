@@ -25,6 +25,7 @@ import com.example.Database.Database;
 import com.example.Database.Patient;
 
 public class PersonActivity extends ActionBarActivity {
+	int position =0;
 	TextView title = null;
 	TextView back = null;
 	Spinner sp_name = null;
@@ -123,6 +124,7 @@ public class PersonActivity extends ActionBarActivity {
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				// TODO Auto-generated method stub
+				position = arg2;
 				choose = sp_name.getAdapter().getItem(arg2).toString(); 
 				
 			}
@@ -174,7 +176,7 @@ public class PersonActivity extends ActionBarActivity {
 						values.put(Patient.he_name, accname);
 						values.put(Patient.he_tel, acctel);
 						values.put(Patient.doctor, masterdoctor);
-						db.update("patient", values, Patient.account+"=?",new String[]{Constants.account});
+						db.update("patient", values, Patient.name+"=?",new String[]{sp_name.getAdapter().getItem(position).toString()});
 						
 					}
 				}.start();
