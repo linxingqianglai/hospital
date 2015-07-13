@@ -26,6 +26,7 @@ public class Database extends SQLiteOpenHelper {
 		db.execSQL(SQLiteConstants.CREATE_TABLE_LOGIN);
 		db.execSQL(SQLiteConstants.CREATE_TABLE_PATIENT);
 		db.execSQL(SQLiteConstants.CREATE_TABLE_LEAVEHOSPITAL);
+		db.execSQL(SQLiteConstants.CREATE_TABLE_LOOKUPCASE);
 		insert(db);
 		Log.e(TAG,"mydb is onCreate");
 	}
@@ -43,23 +44,37 @@ public class Database extends SQLiteOpenHelper {
 		ContentValues values_patient1 = new ContentValues();
 		ContentValues values_patient2 = new ContentValues();
 		ContentValues values_patient3 = new ContentValues();
+		
+		ContentValues values_lookupcase1 = new ContentValues();
+		ContentValues values_lookupcase2 = new ContentValues();
+		ContentValues values_lookupcase3 = new ContentValues();
+		
 		values1.put(SQLiteConstants.account, "2012301200207");
 		values1.put(SQLiteConstants.password, "2012301200207");
 		values2.put(SQLiteConstants.account, "2013310200226");
 		values2.put(SQLiteConstants.password, "2013310200226");
 		values3.put(SQLiteConstants.account, "2013310200126");
 		values3.put(SQLiteConstants.password, "2013310200126");
+		
 		values_patient1.put(Patient.account,"2012301200207");
 		values_patient2.put(Patient.account, "2013310200126");
 		values_patient3.put(Patient.account, "2013310200226");
 		
+		values_lookupcase1.put(Patient.account,"2012301200207");
+		values_lookupcase2.put(Patient.account, "2013310200126");
+		values_lookupcase3.put(Patient.account, "2013310200226");
+		
 		db.insert(SQLiteConstants.table_login, null, values1);
 		db.insert(SQLiteConstants.table_login, null, values2);
 		db.insert(SQLiteConstants.table_login, null, values3);
+		
 		db.insert(SQLiteConstants.table_patient, null, values_patient1);
 		db.insert(SQLiteConstants.table_patient, null, values_patient2);
 		db.insert(SQLiteConstants.table_patient, null, values_patient3);
 		
+		db.insert(LookupCase.table_name, null, values_lookupcase1);
+		db.insert(LookupCase.table_name, null, values_lookupcase2);
+		db.insert(LookupCase.table_name, null, values_lookupcase3);
 		
 	}
 

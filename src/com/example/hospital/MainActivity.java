@@ -32,6 +32,7 @@ public class MainActivity extends Activity {
 	Database database = null;
 	
 	int position=0;
+	
 	Handler handler=new Handler()
 	{
 		public void handleMessage(android.os.Message msg) 

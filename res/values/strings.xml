@@ -39,5 +39,6 @@
     <string name="title_activity_log_cost">LogCostActivity</string>
     <string name="title_activity_cost">CostActivity</string>
     <string name="title_activity_bed">BedActivity</string>
+    <string name="title_activity_hello">HelloActivity</string>
 
 </resources>

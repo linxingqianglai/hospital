@@ -25,7 +25,7 @@
             		android:layout_height="wrap_content"
             	/>
         		<EditText 
-            		android:id="@+id/Name"
+            		android:id="@+id/name"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -59,7 +59,7 @@
             		android:layout_height="wrap_content"
             	/>
         		<EditText 
-            		android:id="@+id/Sex"
+            		android:id="@+id/sex"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -76,7 +76,7 @@
             		android:layout_height="wrap_content"
             	/>
         		<EditText 
-            		android:id="@+id/HospHouse"
+            		android:id="@+id/hosphouse"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -93,7 +93,7 @@
             		android:layout_height="wrap_content"
             	/>
         		<EditText 
-            		android:id="@+id/HospBed"
+            		android:id="@+id/hospbed"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -110,7 +110,7 @@
             		android:layout_height="wrap_content"
             	/>
         		<EditText 
-            		android:id="@+id/StartDate"
+            		android:id="@+id/startdate"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -127,7 +127,7 @@
             		android:layout_height="wrap_content"
             	/>
         		<EditText 
-            		android:id="@+id/LeftDate"
+            		android:id="@+id/leftdate"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -144,7 +144,7 @@
             		android:layout_height="wrap_content"
             	/>
         		<EditText 
-            		android:id="@+id/AccName"
+            		android:id="@+id/accname"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -161,7 +161,7 @@
             		android:layout_height="wrap_content"
             	/>
         		<EditText 
-            		android:id="@+id/AccTel"
+            		android:id="@+id/acctel"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"
@@ -178,7 +178,7 @@
             		android:layout_height="wrap_content"
             	/>
         		<EditText 
-            		android:id="@+id/MasterDoctor"
+            		android:id="@+id/masterdoctor"
             		android:layout_width="fill_parent"
             		android:layout_height="wrap_content"
             		android:background="@null"

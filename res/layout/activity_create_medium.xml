@@ -115,7 +115,7 @@
         <LinearLayout 
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             >
             <TextView 
             	android:layout_width="wrap_content"
@@ -130,9 +130,14 @@
             		android:hint="病情"
             		android:gravity="top"
             		android:lines="10"
-            />
-            
+            /> 
         </LinearLayout>
+        <Button 
+            android:id="@+id/create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="建立"
+            />
          
         </LinearLayout>     
         
