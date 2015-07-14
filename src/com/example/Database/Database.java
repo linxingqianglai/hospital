@@ -28,6 +28,7 @@ public class Database extends SQLiteOpenHelper {
 		db.execSQL(SQLiteConstants.CREATE_TABLE_LEAVEHOSPITAL);
 		db.execSQL(SQLiteConstants.CREATE_TABLE_LOOKUPCASE);
 		db.execSQL(SQLiteConstants.CREATE_TABLE_OWNEXPENSE);
+		db.execSQL(SQLiteConstants.CREATE_TABLE_WARDBED);
 		insert(db);
 		Log.e(TAG,"mydb is onCreate");
 	}

@@ -34,7 +34,7 @@
              android:layout_height="wrap_content"
              android:layout_width="wrap_content"
             />
-        <TextView 
+        <EditText
             android:id="@+id/doctor"
             android:text="none"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
              android:layout_height="wrap_content"
              android:layout_width="wrap_content"
             />
-        <TextView 
+        <EditText 
             android:id="@+id/nurse"
             android:text="none"
             android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
              android:layout_height="wrap_content"
              android:layout_width="wrap_content"
             />
-        <TextView 
+        <EditText 
             android:id="@+id/patient"
             android:text="none"
             android:layout_height="wrap_content"
@@ -76,16 +76,16 @@
             />
     </LinearLayout>
         <LinearLayout 
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:orientation="horizontal"
+        	android:layout_height="wrap_content"
+        	android:layout_width="fill_parent"
+        	android:orientation="horizontal"
         >
         <TextView 
              android:text="床价表:"
              android:layout_height="wrap_content"
              android:layout_width="wrap_content"
             />
-        <TextView 
+        <EditText 
             android:id="@+id/bed_price_list"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
