@@ -1,5 +1,7 @@
 package com.example.hospital;
 
+import java.util.LinkedList;
+
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,12 +10,14 @@ import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -27,7 +31,6 @@ import com.example.Database.OwnExpense;
 import com.example.Database.Patient;
 
 public class LogCostActivity extends ActionBarActivity {
-	SimpleCursorAdapter adapter = null;
 	String choose = null;
 	Handler handler = new Handler()
 	{
@@ -35,7 +38,7 @@ public class LogCostActivity extends ActionBarActivity {
 		{
 			if(msg.what==0x123)
 			{
-				sp_name.setAdapter(adapter);
+				adapter.notifyDataSetChanged();
 			}
 			if(msg.what==0x111)
 			{
@@ -78,11 +81,14 @@ public class LogCostActivity extends ActionBarActivity {
 	String price = "";
 	String measureunits = "";
 	String allincost = "";
+	ArrayAdapter<String> adapter = null;
+	LinkedList<String> list = new LinkedList<String>();
 	Database database = null;
 	Cursor c=null;
 	int position = 0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		list.clear();
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_log_cost);
@@ -99,21 +105,55 @@ public class LogCostActivity extends ActionBarActivity {
 		et_price = (EditText)findViewById(R.id.price);
 		et_measureunits = (EditText)findViewById(R.id.measureunits);
 		et_allincost = (EditText)findViewById(R.id.allincost);
-		title = (EditText)findViewById(R.id.tv_top_title);
-		back = (EditText)findViewById(R.id.btn_title_back);
+		title = (TextView)findViewById(R.id.tv_top_title);
+		back = (TextView)findViewById(R.id.btn_title_back);
 		title.setText("病人日费用记账表");
 		back.setVisibility(View.VISIBLE);
+		adapter = new ArrayAdapter<>(LogCostActivity.this, android.R.layout.simple_spinner_item,list);
+		sp_name.setAdapter(adapter);
 		new Thread()
 		{
 			public void run() 
 			{
 				SQLiteDatabase db = database.getReadableDatabase();
 				c = db.rawQuery("select * from "+OwnExpense.table_name, null);
-			    adapter = new SimpleCursorAdapter(LogCostActivity.this,
-						android.R.layout.simple_dropdown_item_1line,
-						c,new String[]{OwnExpense.name},
-						new int[]{ android.R.id.text1 });
-			    handler.sendEmptyMessage(0x123);
+				c.moveToFirst();
+				/*age = c.getString(c.getColumnIndex(OwnExpense.age));
+				sex = c.getString(c.getColumnIndex(OwnExpense.sex));
+				hosphouse = c.getString(c.getColumnIndex(OwnExpense.ward));
+				hospbed = c.getString(c.getColumnIndex(OwnExpense.ward_no));
+				chargenumber = c.getString(c.getColumnIndex(OwnExpense.expense_item));
+				chargeproject = c.getString(c.getColumnIndex(OwnExpense.expense_code));
+				chargename = c.getString(c.getColumnIndex(OwnExpense.expense_name));
+				price = c.getString(c.getColumnIndex(OwnExpense.unit_price));
+				measureunits = c.getString(c.getColumnIndex(OwnExpense.gauge_unit));
+				allincost = c.getString(c.getColumnIndex(OwnExpense.total_money));*/
+				if(db!=null&&c!=null)
+				{
+					while(!c.isLast())
+					{
+						
+						list.add(c.getString(c.getColumnIndex(Patient.name)));
+						Log.e("age=",c.getString(c.getColumnIndex(OwnExpense.age)));
+						Log.e("sex=",c.getString(c.getColumnIndex(OwnExpense.sex)));
+						Log.e("ward=",c.getString(c.getColumnIndex(OwnExpense.ward)));
+						Log.e("hosphouse=",c.getString(c.getColumnIndex(OwnExpense.ward)));
+						Log.e("hospbed=",c.getString(c.getColumnIndex(OwnExpense.ward_no)));
+						Log.e("chargenumber=",c.getString(c.getColumnIndex(OwnExpense.expense_item)));
+						Log.e("chargeproject=",c.getString(c.getColumnIndex(OwnExpense.expense_code)));
+						Log.e("chargename=",c.getString(c.getColumnIndex(OwnExpense.expense_name)));
+						Log.e("price=",c.getString(c.getColumnIndex(OwnExpense.unit_price)));
+						Log.e("measurenuits=",c.getString(c.getColumnIndex(OwnExpense.gauge_unit)));
+						Log.e("allincost = ",c.getString(c.getColumnIndex(OwnExpense.total_money)));
+						c.moveToNext();
+					}
+					
+				    handler.sendEmptyMessage(0x123);
+				}
+				else
+				{
+					Toast.makeText(LogCostActivity.this, "数据库出错或者Cursor出错", Toast.LENGTH_LONG).show();
+				}
 			};
 		}.start();
 		sp_name.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -122,7 +162,8 @@ public class LogCostActivity extends ActionBarActivity {
 					int arg2, long arg3) {
 				// TODO Auto-generated method stub
 				position = arg2;
-				choose = sp_name.getAdapter().getItem(arg2).toString(); 
+				choose = list.get(position);
+				handler.sendEmptyMessage(0x222);
 				
 			}
 			@Override
@@ -180,7 +221,7 @@ bn_ok.setOnClickListener(new OnClickListener() {
 						values.put(OwnExpense.gauge_unit,measureunits);
 						values.put(OwnExpense.total_money,allincost);
 						db.update(OwnExpense.table_name, values, OwnExpense.name+"=?",new String[]{sp_name.getAdapter().getItem(position).toString()});
-						
+						handler.sendEmptyMessage(0x111);
 					}
 				}.start();
 				
@@ -205,9 +246,19 @@ bn_ok.setOnClickListener(new OnClickListener() {
 			{
 				
 				SQLiteDatabase db = database.getReadableDatabase();
-				c = db.rawQuery("select * from patient where name=?", new String[]{se});
-				if(c.getCount()>0)
-				{   
+				c = db.rawQuery("select * from ownexpense where name=?", new String[]{se});
+				c.moveToFirst();
+				
+				if(c!=null&&c.getCount()>0)
+				{   if(!c.isLast())
+					{
+					
+					
+							Log.e("age=",c.getString(c.getColumnIndex(OwnExpense.age)));
+							Log.e("sex=",c.getString(c.getColumnIndex(OwnExpense.sex)));
+							Log.e("ward=",c.getString(c.getColumnIndex(OwnExpense.ward)));
+					
+					}
 					age = c.getString(c.getColumnIndex(OwnExpense.age));
 					sex = c.getString(c.getColumnIndex(OwnExpense.sex));
 					hosphouse = c.getString(c.getColumnIndex(OwnExpense.ward));

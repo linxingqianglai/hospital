@@ -40,5 +40,9 @@
     <string name="title_activity_cost">CostActivity</string>
     <string name="title_activity_bed">BedActivity</string>
     <string name="title_activity_hello">HelloActivity</string>
+    <string name="title_activity_checkthelookuptable">CheckthelookuptableActivity</string>
+    <string name="title_activity_caselookuptable">CaselookuptableActivity</string>
+    <string name="title_activity_cost_query">CostQueryActivity</string>
+    <string name="title_activity_checkofdoctorsadvice">CheckofdoctorsadviceActivity</string>
 
 </resources>

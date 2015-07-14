@@ -7,4 +7,5 @@ public class WardBed {
 	public static final String nurse="nurse";
 	public static final String patient="patient";
 	public static final String bed_price_list="bed_price_list";
+	
 }

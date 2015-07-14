@@ -43,6 +43,7 @@ public class HospitalManageActivity extends ActionBarActivity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 			    Intent intent = new  Intent(HospitalManageActivity.this,PersonActivity.class);
+				//Intent intent = new Intent(HospitalManageActivity.this,Simple_cursor_adapterActivity.class);
 			    startActivity(intent);
 			}
 		});

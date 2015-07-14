@@ -10,6 +10,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -86,8 +87,24 @@
             android:label="@string/title_activity_bed" >
         </activity>
         <activity
-            android:name=".HelloActivity"
+            android:name=".Simple_cursor_adapterActivity"
             android:label="@string/title_activity_hello" >
+        </activity>
+        <activity
+            android:name=".CheckthelookuptableActivity"
+            android:label="@string/title_activity_checkthelookuptable" >
+        </activity>
+        <activity
+            android:name=".CaselookuptableActivity"
+            android:label="@string/title_activity_caselookuptable" >
+        </activity>
+        <activity
+            android:name=".CostQueryActivity"
+            android:label="@string/title_activity_cost_query" >
+        </activity>
+        <activity
+            android:name=".CheckofdoctorsadviceActivity"
+            android:label="@string/title_activity_checkofdoctorsadvice" >
         </activity>
     </application>
 

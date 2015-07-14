@@ -1,11 +1,17 @@
 package com.example.hospital;
 
+import java.util.LinkedList;
+
+import android.R.anim;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
+import android.support.v4.widget.CursorAdapter;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,18 +19,20 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.Database.Constants;
 import com.example.Database.Database;
 import com.example.Database.Patient;
 
 public class PersonActivity extends ActionBarActivity {
+	//ListView listview;
 	int position =0;
 	TextView title = null;
 	TextView back = null;
@@ -51,7 +59,8 @@ public class PersonActivity extends ActionBarActivity {
 	String masterdoctor = null;
 	Database database = null;
 	Cursor c= null;
-	SimpleCursorAdapter adapter=null;
+	ArrayAdapter<String> adapter=null;
+	LinkedList<String> list= new LinkedList<String>();
 	String choose=null;
 	Handler handler = new Handler()
 	{
@@ -59,7 +68,9 @@ public class PersonActivity extends ActionBarActivity {
 		{
 			if(msg.what==0x123)
 			{
-				sp_name.setAdapter(adapter);
+				//Toast.makeText(PersonActivity.this, "修改数据成功", Toast.LENGTH_LONG).show();
+				adapter.notifyDataSetChanged();
+				//sp_name.setAdapter(adapter);
 			}
 			if(msg.what==0x111)
 			{
@@ -68,10 +79,12 @@ public class PersonActivity extends ActionBarActivity {
 			}
 			if(msg.what==0x222)
 			{
+				//Toast.makeText(PersonActivity.this, "修改数据成功", Toast.LENGTH_LONG).show();
 				update(choose);
 			}
 			if(msg.what==0x333)
 			{
+				//Toast.makeText(PersonActivity.this, "修改数据成功", Toast.LENGTH_LONG).show();
 				updateUI();
 			}
 		};
@@ -81,6 +94,9 @@ public class PersonActivity extends ActionBarActivity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_person);
+		list.clear();
+		//listview = (ListView)findViewById(R.id.listview);
+		database = new Database(PersonActivity.this, Environment.getExternalStorageDirectory().toString());
 		sp_name = (Spinner)findViewById(R.id.name);
 		et_age = (EditText)findViewById(R.id.age);
 		et_sex = (EditText)findViewById(R.id.sex);
@@ -104,17 +120,38 @@ public class PersonActivity extends ActionBarActivity {
 				finish();
 			}
 		});
+		adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
+		sp_name.setAdapter(adapter);
 		new Thread()
 		{
 			public void run() 
 			{
 				SQLiteDatabase db = database.getReadableDatabase();
 				c = db.rawQuery("select * from patient", null);
-			    adapter = new SimpleCursorAdapter(PersonActivity.this,
-						android.R.layout.simple_dropdown_item_1line,
-						c,new String[]{ Patient.name },
-						new int[]{ android.R.id.text1 });
-			    handler.sendEmptyMessage(0x123);
+				c.moveToFirst();
+				/*c = getContentResolver().query(People.CONTENT_URI, null, null, null, null);
+		        startManagingCursor(c);
+		        adapter = new SimpleCursorAdapter(PersonActivity.this, android.R.layout.simple_expandable_list_item_1, c
+		        		, new String[]{People.NAME}, new int[]{android.R.id.text1});*/
+				if(db!=null&&c!=null)
+				{
+					while(!c.isLast())
+					{
+						
+						list.add(c.getString(c.getColumnIndex(Patient.name)));
+						/*Log.e("name=",c.getString(c.getColumnIndex(Patient.name)));
+						Log.e("age=",c.getString(c.getColumnIndex(Patient.age)));
+						Log.e("sex=",c.getString(c.getColumnIndex(Patient.sex)));
+						Log.e("ward=",c.getString(c.getColumnIndex(Patient.ward)));*/
+						c.moveToNext();
+					}
+					
+				    handler.sendEmptyMessage(0x123);
+				}
+				else
+				{
+					Toast.makeText(PersonActivity.this, "数据库出错或者Cursor出错", Toast.LENGTH_LONG).show();
+				}
 			    
 						
 			};
@@ -124,9 +161,10 @@ public class PersonActivity extends ActionBarActivity {
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				// TODO Auto-generated method stub
+				Log.e("positon============",position+"");
 				position = arg2;
-				choose = sp_name.getAdapter().getItem(arg2).toString(); 
-				
+				choose = list.get(position);
+				handler.sendEmptyMessage(0x222);
 			}
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
@@ -156,7 +194,7 @@ public class PersonActivity extends ActionBarActivity {
 						masterdoctor=et_masterdoctor.getText().toString();
 						SQLiteDatabase db=database.getReadableDatabase();
 						ContentValues values = new ContentValues();
-						/**
+					/**
 					age = Integer.parseInt(c.getString(c.getColumnIndex(Patient.age)));
 					sex = c.getString(c.getColumnIndex(Patient.sex));
 					hosphouse = c.getString(c.getColumnIndex(Patient.ward));
@@ -177,6 +215,7 @@ public class PersonActivity extends ActionBarActivity {
 						values.put(Patient.he_tel, acctel);
 						values.put(Patient.doctor, masterdoctor);
 						db.update("patient", values, Patient.name+"=?",new String[]{sp_name.getAdapter().getItem(position).toString()});
+						handler.sendEmptyMessage(0x111);
 						
 					}
 				}.start();
@@ -195,8 +234,22 @@ public class PersonActivity extends ActionBarActivity {
 			{
 				SQLiteDatabase db = database.getReadableDatabase();
 				c = db.rawQuery("select * from patient where name=?", new String[]{se});
-				if(c.getCount()>0)
+				c.moveToFirst();
+				if(c!=null&&c.getCount()>0)
 				{
+					//age = Integer.parseInt(c.getString(c.getColumnIndex(Patient.age)));
+					
+					if(!c.isLast())
+					{
+						
+						
+						Log.e("name=",c.getString(c.getColumnIndex(Patient.name)));
+						Log.e("age=",c.getString(c.getColumnIndex(Patient.age)));
+						Log.e("sex=",c.getString(c.getColumnIndex(Patient.sex)));
+						Log.e("ward=",c.getString(c.getColumnIndex(Patient.ward)));
+						
+					}
+					
 					age = Integer.parseInt(c.getString(c.getColumnIndex(Patient.age)));
 					sex = c.getString(c.getColumnIndex(Patient.sex));
 					hosphouse = c.getString(c.getColumnIndex(Patient.ward));
@@ -236,7 +289,7 @@ public class PersonActivity extends ActionBarActivity {
 	 */
 	public void  updateUI()
 	{
-		et_age.setText(age);
+		et_age.setText(age+"");
 		et_sex.setText(sex);
 		et_hosphouse.setText(hosphouse);
 		et_hospbed.setText(hospbed);
