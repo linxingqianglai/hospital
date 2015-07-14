@@ -17,6 +17,7 @@
             android:text="账户："
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="35dp"
             />
         <EditText 
             android:id="@+id/account_id"
@@ -25,6 +26,7 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:numeric="integer"
+            android:textSize="35dp"
             />
     </LinearLayout>
     <LinearLayout 
@@ -36,6 +38,7 @@
             android:text="密码："
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="35dp"
             />
         <EditText 
             android:hint="密码"
@@ -43,20 +46,24 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@null"
+            android:textSize="35dp"
             />
     </LinearLayout>
     <LinearLayout 
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:orientation="horizontal"
+        
         >
         <TextView
             android:text="选择："
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="35dp"
+            />
         <Spinner 
         	android:id="@+id/spinner"
-        
+        	android:textSize="35dp"
         	android:layout_width="fill_parent"
         	android:layout_height="wrap_content"
         />
@@ -67,6 +74,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="登录"
+        android:textSize="35dp"
         />
     <RelativeLayout 
         android:layout_height="wrap_content"
@@ -79,6 +87,7 @@
             android:text="注册"
             android:layout_marginLeft="5dp"
             android:layout_alignParentLeft="true"
+            android:textSize="35dp"
             />
         <TextView 
             android:id="@+id/change_password"
@@ -87,6 +96,7 @@
             android:text="修改密码"
             android:layout_marginRight="5dp"
             android:layout_alignParentRight="true"
+            android:textSize="35dp"
             />
     </RelativeLayout>
 </LinearLayout>
