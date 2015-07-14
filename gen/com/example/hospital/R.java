@@ -1090,15 +1090,15 @@ containing a value of this type.
         public static final int title_right_btn=0x7f02005d;
     }
     public static final class id {
-        public static final int FactPrice=0x7f050049;
-        public static final int FundSettlement=0x7f05004a;
-        public static final int HospBed=0x7f050045;
-        public static final int HospHouse=0x7f050044;
-        public static final int LeftDate=0x7f050047;
-        public static final int Name=0x7f050041;
-        public static final int PaidAmount=0x7f050048;
-        public static final int Sex=0x7f050043;
-        public static final int StartDate=0x7f050046;
+        public static final int FactPrice=0x7f05004a;
+        public static final int FundSettlement=0x7f05004b;
+        public static final int HospBed=0x7f050046;
+        public static final int HospHouse=0x7f050045;
+        public static final int LeftDate=0x7f050048;
+        public static final int Name=0x7f050042;
+        public static final int PaidAmount=0x7f050049;
+        public static final int Sex=0x7f050044;
+        public static final int StartDate=0x7f050047;
         public static final int accname=0x7f050078;
         public static final int account_id=0x7f05006a;
         public static final int account_password=0x7f05006b;
@@ -1116,7 +1116,7 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f050024;
         public static final int action_settings=0x7f05007e;
         public static final int activity_chooser_view_content=0x7f050025;
-        public static final int age=0x7f050042;
+        public static final int age=0x7f050043;
         public static final int allincost=0x7f050069;
         public static final int always=0x7f05000b;
         public static final int appointment=0x7f050074;
@@ -1174,7 +1174,7 @@ containing a value of this type.
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
         public static final int nurse=0x7f05003e;
-        public static final int ok=0x7f05004b;
+        public static final int ok=0x7f050041;
         public static final int others=0x7f050060;
         public static final int patient=0x7f05003f;
         public static final int price=0x7f050067;

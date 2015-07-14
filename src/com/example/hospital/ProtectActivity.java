@@ -18,6 +18,7 @@ public class ProtectActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_protect);
 		title = (TextView)findViewById(R.id.tv_top_title);
+		back = (TextView)findViewById(R.id.btn_title_back);
 		title.setText("出院管理");
 		back.setVisibility(View.VISIBLE);
 		back.setOnClickListener(new OnClickListener() {
