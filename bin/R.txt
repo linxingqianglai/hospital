@@ -241,8 +241,9 @@ int drawable ic_widget_left_normal 0x7f020058
 int drawable ic_widget_left_pressed 0x7f020059
 int drawable ic_widget_right_normal 0x7f02005a
 int drawable ic_widget_right_pressed 0x7f02005b
-int drawable title_left_btn 0x7f02005c
-int drawable title_right_btn 0x7f02005d
+int drawable myanim 0x7f02005c
+int drawable title_left_btn 0x7f02005d
+int drawable title_right_btn 0x7f02005e
 int id FactPrice 0x7f050053
 int id FundSettlement 0x7f050054
 int id HospBed 0x7f05004f

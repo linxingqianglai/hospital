@@ -1086,8 +1086,9 @@ containing a value of this type.
         public static final int ic_widget_left_pressed=0x7f020059;
         public static final int ic_widget_right_normal=0x7f02005a;
         public static final int ic_widget_right_pressed=0x7f02005b;
-        public static final int title_left_btn=0x7f02005c;
-        public static final int title_right_btn=0x7f02005d;
+        public static final int myanim=0x7f02005c;
+        public static final int title_left_btn=0x7f02005d;
+        public static final int title_right_btn=0x7f02005e;
     }
     public static final class id {
         public static final int FactPrice=0x7f050053;
